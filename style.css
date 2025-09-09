@@ -150,7 +150,7 @@ body {
 
 
 .scroll-container {
-    width: auto;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 30px;
@@ -162,7 +162,7 @@ body {
 
 .image-bar {
     display: flex;
-    width: max-content;
+    min-width: 100%;
     position: relative;
     animation: scroll-left 80s linear infinite;
 }
@@ -360,4 +360,109 @@ body {
     0% { transform: translate(-50%, 0); opacity: 1; }
     50% { transform: translate(-50%, -50px); opacity: 0.7; }
     100% { transform: translate(-50%, 0); opacity: 1; }
+}
+
+
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw;
+    }
+    .scroll-container,
+    .scroll-box,
+    .image-bar {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    .main-header {
+        flex-direction: column;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 36px !important;
+        width: auto !important;
+        margin: 0 auto;
+    }
+
+    .main-menu ul {
+        flex-direction: row;      /* Keep menu horizontal */
+        flex-wrap: wrap;          /* Allow wrapping if needed */
+        gap: 6px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .main-menu ul li {
+        margin: 0 2px;
+    }
+
+    .drop {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .about-container,
+    .music-container,
+    .songs-wrapper,
+    .song-container,
+    .tour-container,
+    .footer-container {
+        width: 98% !important;
+        max-width: 100vw;
+        margin: 12px auto !important;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    .songs-wrapper {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .song-container {
+        width: 100% !important;
+        max-width: 100vw;
+        margin: 0 auto;
+    }
+
+    .image-bar img {
+        width: 90vw;
+        max-width: 220px;
+        height: auto;
+        padding: 0.25rem;
+        border-radius: 1rem;
+    }
+
+    .tour-container ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .tour-container ul li button {
+        width: 100%;
+        margin-top: 8px;
+        font-size: 90%;
+    }
+
+    .abduction-beam {
+        width: 40vw !important;
+        height: 18vh !important;
+        min-width: 0 !important;
+    }
+
+    .cow-shadow-left,
+    .cow-shadow-right {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+    }
 }
